@@ -53,7 +53,7 @@ func CreateTemplateCache() (map[string]*template.Template, error) {
 		return myCach, err
 	}
 	for _, page := range pages {
-		name := filepath.Base(page)
+		name := filepath.Base(page) // here we just notify the page that we will used it in the handlers
 		fmt.Println("you're currently on the page :", page)
 		ts, err := template.New(name).Funcs(functions).ParseFiles(page) // ts is stands for template set
 		if err != nil {
