@@ -140,7 +140,7 @@
                         Please insert a File to uplaod.
                     </div>
                     </div>
-                <button id="btn_submit" type="submit" class="btn btn-primary mb-3">Submit</button>
+                <button id="btn_submit" name="btn_submit" type="submit" class="btn btn-primary mb-3">Submit</button>
             </form>
             </div>
         </div>
@@ -175,10 +175,7 @@
   <script src="C:/Users/ACER/Desktop/AAG/static/assets/js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
   <script src="https://unpkg.com/notie"></script>
-
-
-
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
     /* $(document).ready(function() {
@@ -193,21 +190,79 @@
             }
         });
     }); */
-    document.getElementById(btn_submit).addEventListener(click,function(){
-      notification("Hi","success")
+    let attention = Prompt()
+    document.getElementById("btn_submit").addEventListener("click",function(){
+      //notification("success")
+      //notificationModel("error","<em>hello there</em>","success","Well done!")
+      attention.error({msg:"Hi, There!",title:"you're in the right place",footer:"Welcome"})
     })
-
-    function notification(msg, msgType){
-      notie.alert({
-      type: msgType, // optional, default = 4, enum: [1, 2, 3, 4, 5, 'success', 'warning', 'error', 'info', 'neutral']
-      text: msg "has been uplaod",
-      })
+  {{/* function notificationModel(title, text, icon,  confirmButtonText){
+      Swal.fire({
+            title: title,
+            html: text,
+            icon: icon,
+            confirmButtonText: confirmButtonText
+          })
+    
+    } */}}
+  function Prompt(){
+    let toast = function(c){
+        const{
+          msg= "",
+          icon="success",
+          position = "top-end"
+        }=c;
+              const Toast = Swal.mixin({
+                toast: true,
+                position: position,
+                title:msg,
+                icon:icon,
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.onmouseenter = Swal.stopTimer;
+                  toast.onmouseleave = Swal.resumeTimer;
+                }
+              });
+                Toast.fire({});
+       }
+    let success = function(c){
+    const{
+      msg="",
+      title="",
+      footer="",
+    }=c;
+      Swal.fire({
+          icon: "success",
+          title: title,
+          text:msg,
+          footer: footer,
+        });
     }
+    
+    let error = function(c){
+        const{
+          msg="",
+          title="",
+          footer="",
+        }=c;
+          Swal.fire({
+              icon: "error",
+              title: title,
+              text:msg,
+              footer: footer,
+            });
+        }
+
+    return{
+    toast:toast,
+    success:success,
+    error:error,
+      }
+  }
 </script>
-<script>const elem = document.querySelector('input[name="P_date"]');
-const datepicker = new Datepicker(elem, {
-  // ...options
-});</script>
+
 <script>
 (() => {
   'use strict'
@@ -228,5 +283,9 @@ const datepicker = new Datepicker(elem, {
   })
 })()
 </script>
+<script>const elem = document.querySelector('input[name="P_date"]');
+const datepicker = new Datepicker(elem, {
+  // ...options
+});</script>
   </body>
   </html>
