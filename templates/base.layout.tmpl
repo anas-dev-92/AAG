@@ -12,28 +12,28 @@
   
   
   
-  <link href="C:/Users/ACER/Desktop/AAG/static/assets/img/favicon1.png" rel="icon">
-  <link href="C:/Users/ACER/Desktop/AAG/static/assets/img/apple-touch-icon1.png" rel="apple-touch-icon">
+  <link href="/static/assets/img/favicon1.png" rel="icon">
+  <link href="/static/assets/img/apple-touch-icon1.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
 
-  <link href="C:/Users/ACER/Desktop/AAG/static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="C:/Users/ACER/Desktop/AAG/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="C:/Users/ACER/Desktop/AAG/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="C:/Users/ACER/Desktop/AAG/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="C:/Users/ACER/Desktop/AAG/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="C:/Users/ACER/Desktop/AAG/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="C:/Users/ACER/Desktop/AAG/static/assets/css/style.css" rel="stylesheet">
+  <link href="/static/assets/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker.min.css">
 
 
-    <link rel="stylesheet" href="./assets/css/bootstrap.css" />
-    <link rel="stylesheet" href="./assets/css/masonry-1.css" />
+    <link rel="stylesheet" href="/static/assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/assets/css/masonry-1.css" />
 
   </head>
 
@@ -57,29 +57,174 @@
     <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Zanjabeels</a></h1>
+      <h1 class="logo me-auto"><a href="/templates/home.page.tmpl">Zanjabeels</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!--  <a href="index.html" class="logo me-auto"><img src="assets/img/apple-touch-icon1.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="C:/Users/ACER/Desktop/AAG/templates/index.html">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto active" href="/templates/home.page.tmpl">Home</a></li>
+          <li><a class="nav-link scrollto" href="/templates/about.page.tmpl">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="C:/Users/ACER/Desktop/AAG/templates/Resources.html">Resources</a></li>
-          <li><a class="nav-link scrollto" href="C:/Users/ACER/Desktop/AAG/templates/UploadData.html">UploadData</a></li>
+          <li><a class="nav-link scrollto" href="/templates/Resources.page.tmpl">Resources</a></li>
+          <li><a class="nav-link scrollto" href="/templates/UploadData.page.tmpl">UploadData</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="/templates/contact.page.tmpl">Contact</a></li>
           <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
     {{block "content" .}}
+
     {{end}}
 
 
+  
+    <footer id="footer">
+      <div class="container">
+        <h3>Zanjabeels</h3>
+        <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+        <div class="copyright">
+          &copy; Copyright <strong><span>Zanjabeels</span></strong>. All Rights Reserved
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+  
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+    <!-- Vendor JS Files -->
+    <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/static/assets/vendor/php-email-form/validate.js"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="/static/assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
+    <script src="https://unpkg.com/notie"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {{block "js" .}}
+    
     {{end}}
-</body>
-</html>
+  
+      <script>
+      /* $(document).ready(function() {
+          $('#phone').intlTelInput({
+              separateDialCode: true,
+              initialCountry: 'auto',
+              geoIpLookup: function(success, failure) {
+                  $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+                      var countryCode = (resp && resp.country) ? resp.country : "";
+                      success(countryCode);
+                  });
+              }
+          });
+      }); */
+      let attention = Prompt()
+      document.getElementById("btn_submit").addEventListener("click",function(){
+        //notification("success")
+        //notificationModel("error","<em>hello there</em>","success","Well done!")
+        attention.error({msg:"Hi, There!",title:"you're in the right place",footer:"Welcome"})
+      })
+    {{/* function notificationModel(title, text, icon,  confirmButtonText){
+        Swal.fire({
+              title: title,
+              html: text,
+              icon: icon,
+              confirmButtonText: confirmButtonText
+            })
+      
+      } */}}
+    function Prompt(){
+      let toast = function(c){
+          const{
+            msg= "",
+            icon="success",
+            position = "top-end"
+          }=c;
+                const Toast = Swal.mixin({
+                  toast: true,
+                  position: position,
+                  title:msg,
+                  icon:icon,
+                  showConfirmButton: false,
+                  timer: 3000,
+                  timerProgressBar: true,
+                  didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                  }
+                });
+                  Toast.fire({});
+         }
+      let success = function(c){
+      const{
+        msg="",
+        title="",
+        footer="",
+      }=c;
+        Swal.fire({
+            icon: "success",
+            title: title,
+            text:msg,
+            footer: footer,
+          });
+      }
+      
+      let error = function(c){
+          const{
+            msg="",
+            title="",
+            footer="",
+          }=c;
+            Swal.fire({
+                icon: "error",
+                title: title,
+                text:msg,
+                footer: footer,
+              });
+          }
+  
+      return{
+      toast:toast,
+      success:success,
+      error:error,
+        }
+    }
+  </script>
+  
+  <script>
+  (() => {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+  
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+  </script>
+  <script>const elem = document.querySelector('input[name="P_date"]');
+  const datepicker = new Datepicker(elem, {
+    // ...options
+  });</script>
+    </body>
+    </html>
 {{end}}

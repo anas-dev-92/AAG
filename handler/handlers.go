@@ -39,3 +39,10 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 		StringMap: stringmap,
 	}) // here send the data to the template
 }
+func (m *Repository) Resources(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "Resources.page.tmpl", &models.TemplateData{})
+}
+func (m *Repository) UploadData(w http.ResponseWriter, r *http.Request) {
+
+	render.RenderTemplate(w, "UploadData.page.tmpl", &models.TemplateData{})
+}
