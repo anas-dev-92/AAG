@@ -58,20 +58,18 @@
     <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="/templates/home.page.tmpl">Zanjabeels</a></h1>
+      <h1 class="logo me-auto"><a href="/">Zanjabeels</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!--  <a href="index.html" class="logo me-auto"><img src="assets/img/apple-touch-icon1.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="/">Home</a></li>
-          <li><a class="nav-link scrollto" href="/about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="/services">Services</a></li>
           <li><a class="nav-link scrollto" href="/Resources">Resources</a></li>
           <li><a class="nav-link scrollto" href="/UploadData">UploadData</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="/about">About</a></li>
           <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -121,6 +119,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
     <script src="https://unpkg.com/notie"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/static/assets/vendor/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/static/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="/static/assets/vendor/isotope/isotope.pkgd.min.js"></script>
+    <script src="/static/assets/js/masonry-1.js"></script>
+
     {{block "js" .}}
     
     {{end}}

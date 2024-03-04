@@ -2,6 +2,70 @@
 
 {{define "content"}}
 
+<section id="resources" class="resources">
+    <div class="section-title">
+          <h2>Upload Data</h2>
+          <p>Welcome to Resources, Here you can Upload Data for our Resources documents.</p>
+    </div>
+        <div class="container">
+        <div class="row">
+        <div class="col-md-3"></div>
+         <div class="col-md-6">
+            <form action = "UploadData.html" method="get" novalidate class="needs-validation">
+                <div class="mb-3">
+                    <label for="file_name" class="form-label">FileName</label>
+                    <input type="text" class="form-control" id="file_name" name="file_name" required placeholder="Please enter file name">
+                    <div class="invalid-feedback">
+                        Please choose a FileNmae.
+                    </div>
+                </div>
+                    <div class="mb-3">
+                      <label for="P_date" class="form-label">Publishing Date</label>
+                      <input required type="text" class="form-control" id="P_date" name="P_date" placeholder="Please enter Publishing Date">
+                      <div class="invalid-feedback">
+                        Please Insert Publishing Date.
+                    </div>
+                    </div>  
+                    <div>
+                        <label for="country" class="form-label">Country...</label>
+                        <select class="form-select mb-3" id="countrySelect" required>
+                            <option value="IQ">Iraq</option>
+                            <option value="PK">Pakistan</option>
+                            <option value="LA">Laos</option>
+                            <option value="EG">Egypt</option>
+                            <option value="SR">Syria</option>
+                            <option value="KSA">Suadia Arabia</option>
+                            <option value="JR">Jordan</option>
+                            <option value="MR">Moroco</option>
+                            <option value="AG">Algeria</option>
+                        <!-- Add more options for other countries -->
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                    <label class="input-group-text" for="file_type">File Types</label>
+                    <select class="form-select" id="file_type" name="file_type" required>
+                    <div class="invalid-feedback">
+                        Please choose a File Type.
+                    </div>
+                        <option selected>Article</option>
+                        <option value="1">Paper</option>
+                        <option value="2">Book</option>
+                        <option value="3">Others</option>
+                    </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="file_upload" required>
+                        <label class="input-group-text" for="file_upload">Upload</label>
+                        <div class="invalid-feedback">
+                        Please insert a File to uplaod.
+                    </div>
+                    </div>
+                <button id="btn_submit" name="btn_submit" type="submit" class="btn btn-primary mb-3">Submit</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 {{end}}

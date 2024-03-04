@@ -26,6 +26,8 @@ func routes(app *config.AppConfig) http.Handler {
 	mux.Get("/about", handler.Repo.About)
 	mux.Get("/Resources", handler.Repo.Resources)
 	mux.Get("/UploadData", handler.Repo.UploadData)
+	mux.Get("/services", handler.Repo.Services)
+	mux.Get("/contact", handler.Repo.Contact)
 
 	//this defenition to get static files for the pages
 	Fileserver := http.FileServer(http.Dir("./static/"))

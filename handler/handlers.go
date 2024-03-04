@@ -46,3 +46,11 @@ func (m *Repository) UploadData(w http.ResponseWriter, r *http.Request) {
 
 	render.RenderTemplate(w, "UploadData.page.tmpl", &models.TemplateData{})
 }
+func (m *Repository) Services(w http.ResponseWriter, r *http.Request) {
+
+	render.RenderTemplate(w, "services.page.tmpl", &models.TemplateData{})
+}
+func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
+
+	render.RenderTemplate(w, "contact.page.tmpl", &models.TemplateData{})
+}

@@ -1,21 +1,34 @@
 {{template "base" .}}
 
 {{define "content"}}
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h1>this is the about page</h1>            
-            <p>this is coming from the Data side: {{index .StringMap "hello"}}</p>
+<section id="about" class="about">
+    <div class="container">
 
-            <p>
-                {{if ne (index .StringMap "remote_ip") ""}}
-                your remote ip address is {{index .StringMap "remote_ip"}}
-                {{else}}
-                i don't know your ip address visit <a href="/">Home Page</a> please so i will know your ip
-                {{end}}
-            </p>
+      <div class="section-title">
+        <h2>About Us</h2>
+        <p>Welcome to Zanjabeels, your trusted partner in the evolution of agriculture. Founded with a vision to revolutionize traditional farming practices, we are committed to leveraging innovation and technology to empower farmers worldwide.</p>
+      </div>
 
+      <div class="row">
+        <div class="col-lg-6 order-1 order-lg-2">
+          <img src="/static/assets/img/aboutt.jpg" class="img-fluid" alt="">
         </div>
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+          <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+          <p class="fst-italic">
+            At Zanjabeels, we believe that agriculture is not just a profession, but a way of life—a fundamental cornerstone of our society and the global economy. With this in mind, we are dedicated to providing comprehensive solutions that enable farmers to thrive in an ever-changing world.
+
+            Our journey began with a passion for sustainability and a drive to make a meaningful impact on the agricultural industry. Through years of research, development, and collaboration with industry experts, we have developed a suite of cutting-edge technologies and services designed to address the most pressing challenges facing modern farmers.
+          </p>
+          <ul>
+            <li><i class="bi bi-check-circled"></i> From smart irrigation systems to precision farming solutions, our offerings are tailored to optimize crop yield, conserve resources, and promote environmental stewardship. </li>
+            <li><i class="bi bi-check-circled"></i> We understand that every farm is unique, which is why we take a personalized approach to each of our clients, delivering customized solutions that meet their specific needs and goals.</li>
+            <li><i class="bi bi-check-circled"></i> But beyond our products and services, what truly sets Zanjabeels apart is our unwavering commitment to customer satisfaction and support. We view our clients as partners in progress, and we are dedicated to providing them with the guidance, expertise, and resources they need to succeed.</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
-    </div>
+  </section><!-- End About Us Section -->
+
 {{end}}
