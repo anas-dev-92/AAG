@@ -46,6 +46,10 @@ func (m *Repository) UploadData(w http.ResponseWriter, r *http.Request) {
 
 	render.RenderTemplate(w, "UploadData.page.tmpl", &models.TemplateData{})
 }
+func (m *Repository) PostUploadData(w http.ResponseWriter, r *http.Request) {
+
+	w.Write([]byte("post to upload data"))
+}
 func (m *Repository) Services(w http.ResponseWriter, r *http.Request) {
 
 	render.RenderTemplate(w, "services.page.tmpl", &models.TemplateData{})
