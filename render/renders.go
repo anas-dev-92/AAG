@@ -10,6 +10,7 @@ import (
 
 	"github.com/anas-dev-92/AGA/config"
 	"github.com/anas-dev-92/AGA/models"
+	"github.com/justinas/nosurf"
 )
 
 var functions = template.FuncMap{} //It is used to define a mapping of function names to functions that can be used within Go templates.
@@ -19,12 +20,13 @@ func NewTemplate(a *config.AppConfig) {
 	app = a
 }
 
-func DefultData(td *models.TemplateData) *models.TemplateData {
+func DefultData(td *models.TemplateData, r *http.Request) *models.TemplateData {
+	td.CSRFToken = nosurf.Token(r)
 	return td
 }
 
 // the where is what server will response back to the client
-func RenderTemplate(w http.ResponseWriter, temp string, td *models.TemplateData) {
+func RenderTemplate(w http.ResponseWriter, r *http.Request, temp string, td *models.TemplateData) {
 	var tc map[string]*template.Template
 	if app.UseCache { // this is when ask if the app is up to date then take it from cache else create new copy
 		tc = app.TemplateCache
@@ -36,7 +38,7 @@ func RenderTemplate(w http.ResponseWriter, temp string, td *models.TemplateData)
 		log.Fatal("could not get the template from templateCache")
 	}
 	buf := new(bytes.Buffer)
-	td = DefultData(td)
+	td = DefultData(td, r)
 	_ = t.Execute(buf, td) // here we exec the templates and we store the data inside the buffer bytes
 	_, err := buf.WriteTo(w)
 	if err != nil {

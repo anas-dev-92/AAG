@@ -145,7 +145,31 @@
       document.getElementById("btn_submit").addEventListener("click",function(){
         //notification("success")
         //notificationModel("error","<em>hello there</em>","success","Well done!")
-        attention.error({msg:"Hi, There!",title:"you're in the right place",footer:"Welcome"})
+          let formData = new FormData(document.getElementById("Upolad_Data"));
+          let jsonData = {
+            "file_name": "Example File",
+            "P_date": "2024-03-10",
+            "country": "laos",
+            "file_type": "Article"
+          };
+      
+          formData.forEach((value, key) => {
+              jsonData[key] = value;
+          });
+          //  these two line for checking the selected country and document type from the usersa 
+          let countrySelect = document.getElementById("countrySelect");
+          let selectedCountry = countrySelect.options[countrySelect.selectedIndex].text;
+          jsonData["country"] = selectedCountry;
+
+          let file_type = document.getElementById("file_type");
+          let filed_type = file_type.options[file_type.selectedIndex].text;
+          jsonData["file_type"] = filed_type;
+          //Convert JSON object to string
+          let jsonString = JSON.stringify(jsonData);
+          
+          // Example of using the jsonString
+          console.log(jsonString);
+       // attention.error({msg:"Hi, There!",title:"you're in the right place",footer:"Welcome"})
       })
     {{/* function notificationModel(title, text, icon,  confirmButtonText){
         Swal.fire({

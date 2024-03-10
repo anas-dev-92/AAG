@@ -27,7 +27,7 @@ func NewHandler(r *Repository) {
 func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 	remoteIP := r.RemoteAddr
 	m.App.Session.Put(r.Context(), "remote_ip", remoteIP)
-	render.RenderTemplate(w, "home.page.tmpl", &models.TemplateData{})
+	render.RenderTemplate(w, r, "home.page.tmpl", &models.TemplateData{})
 }
 func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	//here we can build some logic functionality
@@ -35,16 +35,16 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	stringmap["hello"] = "from the string map"
 	remoteIp := m.App.Session.GetString(r.Context(), "remote_ip")
 	stringmap["remote_ip"] = remoteIp
-	render.RenderTemplate(w, "about.page.tmpl", &models.TemplateData{
+	render.RenderTemplate(w, r, "about.page.tmpl", &models.TemplateData{
 		StringMap: stringmap,
 	}) // here send the data to the template
 }
 func (m *Repository) Resources(w http.ResponseWriter, r *http.Request) {
-	render.RenderTemplate(w, "Resources.page.tmpl", &models.TemplateData{})
+	render.RenderTemplate(w, r, "Resources.page.tmpl", &models.TemplateData{})
 }
 func (m *Repository) UploadData(w http.ResponseWriter, r *http.Request) {
 
-	render.RenderTemplate(w, "UploadData.page.tmpl", &models.TemplateData{})
+	render.RenderTemplate(w, r, "UploadData.page.tmpl", &models.TemplateData{})
 }
 func (m *Repository) PostUploadData(w http.ResponseWriter, r *http.Request) {
 
@@ -52,9 +52,9 @@ func (m *Repository) PostUploadData(w http.ResponseWriter, r *http.Request) {
 }
 func (m *Repository) Services(w http.ResponseWriter, r *http.Request) {
 
-	render.RenderTemplate(w, "services.page.tmpl", &models.TemplateData{})
+	render.RenderTemplate(w, r, "services.page.tmpl", &models.TemplateData{})
 }
 func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
 
-	render.RenderTemplate(w, "contact.page.tmpl", &models.TemplateData{})
+	render.RenderTemplate(w, r, "contact.page.tmpl", &models.TemplateData{})
 }
