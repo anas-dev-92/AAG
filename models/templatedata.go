@@ -1,6 +1,6 @@
 package models
 
-import "github.com/anas-dev-92/AGA/froms"
+import froms "github.com/anas-dev-92/AGA/forms"
 
 type TemplateData struct {
 	StringMap map[string]string
