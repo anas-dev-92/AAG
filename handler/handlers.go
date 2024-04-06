@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/anas-dev-92/AGA/config"
+	"github.com/anas-dev-92/AGA/forms"
 	"github.com/anas-dev-92/AGA/models"
 	"github.com/anas-dev-92/AGA/render"
 )
@@ -44,7 +45,9 @@ func (m *Repository) Resources(w http.ResponseWriter, r *http.Request) {
 }
 func (m *Repository) UploadData(w http.ResponseWriter, r *http.Request) {
 
-	render.RenderTemplate(w, r, "UploadData.page.tmpl", &models.TemplateData{})
+	render.RenderTemplate(w, r, "UploadData.page.tmpl", &models.TemplateData{
+		Form: forms.New(),
+	})
 }
 func (m *Repository) PostUploadData(w http.ResponseWriter, r *http.Request) {
 
