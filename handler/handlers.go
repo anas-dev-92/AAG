@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/anas-dev-92/AGA/config"
-	"github.com/anas-dev-92/AGA/froms"
+	"github.com/anas-dev-92/AGA/forms"
 	"github.com/anas-dev-92/AGA/models"
 	"github.com/anas-dev-92/AGA/render"
 )
@@ -47,7 +47,7 @@ func (m *Repository) Resources(w http.ResponseWriter, r *http.Request) {
 func (m *Repository) UploadData(w http.ResponseWriter, r *http.Request) {
 
 	render.RenderTemplate(w, r, "UploadData.page.tmpl", &models.TemplateData{
-		Form: froms.New(nil), // now whenever we render this page we can get all the forms inside of it thus access any object in it
+		Form: forms.New(nil), // now whenever we render this page we can get all the forms inside of it thus access any object in it
 	})
 }
 func (m *Repository) PostUploadData(w http.ResponseWriter, r *http.Request) {
@@ -58,7 +58,13 @@ func (m *Repository) PostUploadData(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	//its ok to start make all the variables inside the form here and work with it but better to create a new file for that which in our case model.go
-
+	uploadDate := models.UploadData{
+		FileName:       r.Form.Get("file_name"),
+		PublishingDate: r.Form.Get("P_date"),
+		Country:        r.Form.Get("country"),
+		FileTypes:      r.Form.Get("file_type"),
+	}
+	form := forms.New(nil)
 }
 func (m *Repository) Services(w http.ResponseWriter, r *http.Request) {
 
