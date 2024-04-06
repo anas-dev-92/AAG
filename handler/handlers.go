@@ -1,10 +1,11 @@
 package handler
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/anas-dev-92/AGA/config"
-	"github.com/anas-dev-92/AGA/forms"
+	"github.com/anas-dev-92/AGA/froms"
 	"github.com/anas-dev-92/AGA/models"
 	"github.com/anas-dev-92/AGA/render"
 )
@@ -46,12 +47,18 @@ func (m *Repository) Resources(w http.ResponseWriter, r *http.Request) {
 func (m *Repository) UploadData(w http.ResponseWriter, r *http.Request) {
 
 	render.RenderTemplate(w, r, "UploadData.page.tmpl", &models.TemplateData{
-		Form: forms.New(),
+		Form: froms.New(nil), // now whenever we render this page we can get all the forms inside of it thus access any object in it
 	})
 }
 func (m *Repository) PostUploadData(w http.ResponseWriter, r *http.Request) {
+	// one of the first good practice to do is to sign an variable for error inisde r (http.request) to check
+	err := r.ParseForm()
+	if err != nil {
+		log.Println(err)
+		return
+	}
+	//its ok to start make all the variables inside the form here and work with it but better to create a new file for that which in our case model.go
 
-	w.Write([]byte("post to upload data"))
 }
 func (m *Repository) Services(w http.ResponseWriter, r *http.Request) {
 
