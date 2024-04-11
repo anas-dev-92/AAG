@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/anas-dev-92/AGA/config"
-	"github.com/anas-dev-92/AGA/forms"
+	froms "github.com/anas-dev-92/AGA/forms"
 	"github.com/anas-dev-92/AGA/models"
 	"github.com/anas-dev-92/AGA/render"
 )
@@ -47,7 +47,7 @@ func (m *Repository) Resources(w http.ResponseWriter, r *http.Request) {
 func (m *Repository) UploadData(w http.ResponseWriter, r *http.Request) {
 
 	render.RenderTemplate(w, r, "UploadData.page.tmpl", &models.TemplateData{
-		Form: forms.New(nil), // now whenever we render this page we can get all the forms inside of it thus access any object in it
+		Form: froms.New(nil), // now whenever we render this page we can get all the forms inside of it thus access any object in it
 	})
 }
 func (m *Repository) PostUploadData(w http.ResponseWriter, r *http.Request) {
@@ -64,7 +64,22 @@ func (m *Repository) PostUploadData(w http.ResponseWriter, r *http.Request) {
 		Country:        r.Form.Get("country"),
 		FileTypes:      r.Form.Get("file_type"),
 	}
-	form := forms.New(nil)
+	form := froms.New(r.PostForm)
+
+	form.Has("file_name", r)
+	if !form.Valid() {
+		data := make(map[string]interface{}) // we make this var so can hold the data that user will put in the form and its similer to data var in template file
+		data["uploadData"] = uploadDate
+		/*here we need to keep store the data if the user enter some of it true and valid so we can bring back the page with
+		correct data he put and sent him error on the wrong one.
+		here we call the same render for the uplaoddata page but we will not make new forms*/
+		render.RenderTemplate(w, r, "UploadData.page.tmpl", &models.TemplateData{
+			Form: form,
+			Data: data,
+		})
+		return // this to stop processing this function
+	}
+
 }
 func (m *Repository) Services(w http.ResponseWriter, r *http.Request) {
 

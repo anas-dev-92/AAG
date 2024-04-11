@@ -15,7 +15,12 @@
                 <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
                 <div class="mb-3">
                     <label for="file_name" class="form-label">FileName</label>
-                    <input type="text" class="form-control" id="file_name" name="file_name" required placeholder="Please enter file name">
+                   
+                    {{with .Form.Errors.Get "file_name"}}
+                   <label class="text-danger">{{.}}</label> 
+                    {{end}}
+                    
+                    <input type="text" class="form-control {{with .Form.Errors.Get "file_name"}} is-invalid {{end}}" id="file_name" name="file_name" required placeholder="Please enter file name">
                     <div class="invalid-feedback">
                         Please choose a FileNmae.
                     </div>
